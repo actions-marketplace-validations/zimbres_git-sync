@@ -33,6 +33,8 @@ runs:
     SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
     SOURCE_SSH_PRIVATE_KEY: ${{ inputs.source_ssh_private_key }}
     DESTINATION_SSH_PRIVATE_KEY: ${{ inputs.destination_ssh_private_key }}
+    GIT_USEREMAIL: ${{ inputs.git_useremail }}
+    GIT_USERNAME: ${{ inputs.git_username }}
   args:
     - ${{ inputs.source_repo }}
     - ${{ inputs.source_branch }}
