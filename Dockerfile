@@ -5,7 +5,9 @@ LABEL "homepage"="http://github.com/wei/git-sync"
 LABEL "maintainer"="Wei He <github@weispot.com>"
 
 RUN apk add --no-cache git openssh-client && \
-  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
+  echo "  PubkeyAcceptedAlgorithms +ssh-rsa" >> /etc/ssh/ssh_config \
+  echo "  HostkeyAlgorithms +ssh-rsa" >> /etc/ssh/ssh_config
 
 ADD *.sh /
 
