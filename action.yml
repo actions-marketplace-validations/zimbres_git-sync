@@ -26,6 +26,12 @@ inputs:
   destination_ssh_private_key:
     description: SSH key used to authenticate with destination ssh url provided (optional if public or https url with authentication)
     required: false
+  git_useremail:
+    description: Git user email used in push to destination repo
+    required: false
+  git_username:
+    description: Git user name used in push to destination repo
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

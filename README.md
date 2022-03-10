@@ -1,6 +1,6 @@
 # Git Sync
 
-A GitHub Action for syncing between two independent repositories using **force push**.
+A GitHub Action for syncing between two independent repositories.
 
 ## Features
 
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: git-sync
-        uses: zimbres/git-sync@v1.1.6
+        uses: zimbres/git-sync@v1.1.7
         with:
           source_repo: "source_org/repository"
           source_branch: "main"
@@ -33,6 +33,8 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
           source_ssh_private_key: ${{ secrets.SOURCE_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
           destination_ssh_private_key: ${{ secrets.DESTINATION_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
+          git_useremail: ${{ secrets.GIT_USEREMAIL }} # optional, default value if not set = `email@not.set`
+          git_username: ${{ secrets.GIT_USERNAME }} # optional, default value if not set = `Not Set`
 ```
 
 ##### Using shorthand
@@ -107,7 +109,3 @@ $ docker run --rm -e "SSH_PRIVATE_KEY=$(cat ~/.ssh/id_rsa)" $(docker build -q .)
 ## Author
 
 [Wei He](https://github.com/wei) _github@weispot.com_
-
-## License
-
-[MIT](https://wei.mit-license.org)

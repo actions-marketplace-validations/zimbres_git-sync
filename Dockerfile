@@ -1,8 +1,8 @@
 FROM alpine
 
-LABEL "repository"="http://github.com/wei/git-sync"
-LABEL "homepage"="http://github.com/wei/git-sync"
-LABEL "maintainer"="Wei He <github@weispot.com>"
+LABEL "forked-from"="http://github.com/wei/git-sync"
+LABEL "repository"="https://github.com/zimbres/git-sync"
+LABEL "maintainer"="Marcio Zimbres <marcio@zimbres.com>"
 
 RUN apk add --no-cache git openssh-client
 RUN echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
