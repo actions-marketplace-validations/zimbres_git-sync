@@ -48,8 +48,8 @@ if [[ -n "$DESTINATION_SSH_PRIVATE_KEY" ]]; then
   git config --local core.sshCommand "/usr/bin/ssh -i ~/.ssh/dst_rsa"
 fi
 
-git config --local user.email "you@example.com"
-git config --local user.name "Your Name"
+git config --local user.email "${GIT_USEREMAIL:="email@not.set"}"
+git config --local user.name "${GIT_USERNAME:="Not Set"}"
 git config --local pull.rebase true
 git pull destination ${DESTINATION_BRANCH}
 git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
