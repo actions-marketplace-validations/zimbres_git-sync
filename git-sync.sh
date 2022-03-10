@@ -50,7 +50,7 @@ fi
 
 git config --local user.email "you@example.com"
 git config --local user.name "Your Name"
-git config --local pull.ff only 
+git config --local pull.rebase true
 git pull destination ${DESTINATION_BRANCH}
 git push destination "${SOURCE_BRANCH}:${DESTINATION_BRANCH}"
  
