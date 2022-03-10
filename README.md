@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: git-sync
-        uses: zimbres/git-sync@v1.0.6
+        uses: zimbres/git-sync@v1.0.7
         with:
           source_repo: "source_org/repository"
           source_branch: "main"
